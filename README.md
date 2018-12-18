@@ -7,5 +7,6 @@ Express week 8 project.
 
 basic CV template for FAC
 
-![Alt text](/desktop/Screen Shot 2018-12-18 at 18.27.53.png?raw=true "Optional Title")
 
+
+![](/desktop/Screen Shot 2018-12-18 at 18.27.53.png)
