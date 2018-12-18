@@ -9,4 +9,4 @@ basic CV template for FAC
 
 
 
-![](./desktop/Screen Shot 2018-12-18 at 18.27.53.png)
+![screen shot 2018-12-18 at 18 27 53](https://user-images.githubusercontent.com/25176118/50175056-c3fda800-02f3-11e9-88f8-0588c6321259.png)
