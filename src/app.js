@@ -21,7 +21,7 @@ app.engine(
   })
 );
 
-app.set("port", process.env.PORT || 6666);
+app.set("port", process.env.PORT || 1989);
 app.use(routes);
 
 module.exports = app;
