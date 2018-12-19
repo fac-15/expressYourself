@@ -1,0 +1,14 @@
+2018-12-19 15:23:49.422 GMT [18464] FATAL:  database files are incompatible with server
+2018-12-19 15:23:49.422 GMT [18464] DETAIL:  The data directory was initialized by PostgreSQL version 10, which is not compatible with this version 11.1.
+2018-12-19 15:26:08.078 GMT [19078] LOG:  listening on IPv6 address "::1", port 5432
+2018-12-19 15:26:08.078 GMT [19078] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-12-19 15:26:08.125 GMT [19078] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-12-19 15:26:08.143 GMT [19079] LOG:  database system was shut down at 2018-12-19 15:25:57 GMT
+2018-12-19 15:26:08.148 GMT [19078] LOG:  database system is ready to accept connections
+2018-12-19 15:26:12.661 GMT [19103] FATAL:  database "jasoncharnley" does not exist
+2018-12-19 15:26:58.889 GMT [19155] FATAL:  database "jasoncharnley" does not exist
+2018-12-19 15:31:48.712 GMT [19209] ERROR:  syntax error at or near "/" at character 1
+2018-12-19 15:31:48.712 GMT [19209] STATEMENT:  /l
+	CREATE DATABASE express_yourself
+	CREATE USER admin WITH SUPERUSER PASSWORD 'password'
+	;
