@@ -1,4 +1,5 @@
 const express = require("express");
+const getData = require("../model/getData");
 
 //here we'll require default infos from database
 // const getData =
@@ -17,17 +18,27 @@ router.get("/create-profile", (req, res) => {
 
 // search profiles route
 router.get("/search-profiles", (req, res) => {
-  res.render("search-profiles"); // . { data: getData}after we get the getData
+  // getData.getUserData((err, res) => {
+  //   if (err) {
+  //     return console.log(err);
+  //   } else {
+  //     const userData = JSON.stringify(res);
+  //   }
+  // });
+
+  const userData = res.json(getData);
+
+  res.render("search-profiles", {
+    users: userData
+  }); // . { data: getData}after we get the getData
 });
 
 // individual profile route
 // - use a variable in the route name: see express-workshop with the fruit
 // router.get("/profile", (req, res) => {
-//   res.render("profile"); 
+//   res.render("profile");
 // });
 
-
 // host files
-
 
 module.exports = router;
