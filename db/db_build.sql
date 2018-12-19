@@ -38,6 +38,39 @@ INSERT INTO users (name, bio) VALUES
 'Love bagels while coding'
 );
 
-COMMIT;
 -- INSERT INTO languages (user_id, html, css, js, sql, node) VALUES
--- ()
+-- (
+--   (SELECT id FROM users WHERE name = 'Sandra'),
+--   '4',
+--   '3',
+--   '3',
+--   '4',
+--   '2'
+-- ),
+-- (
+--   (SELECT id FROM users WHERE name = 'Jason'),
+--   '3',
+--   '3',
+--   '3',
+--   '4',
+--   '3'
+-- ),
+-- (
+--   (SELECT id FROM users WHERE name = 'Martin'),
+--   '5',
+--   '5',
+--   '5',
+--   '5',
+--   '5',
+-- ),
+-- (
+--   (SELECT id FROM users WHERE name = 'Mike'),
+--   '5',
+--   '5',
+--   '5',
+--   '5',
+--   '5'
+-- );
+
+COMMIT;
+
