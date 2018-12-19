@@ -18,18 +18,8 @@ router.get("/create-profile", (req, res) => {
 
 // search profiles route
 router.get("/search-profiles", (req, res) => {
-  // getData.getUserData((err, res) => {
-  //   if (err) {
-  //     return console.log(err);
-  //   } else {
-  //     const userData = JSON.stringify(res);
-  //   }
-  // });
-
-  const userData = res.json(getData);
-
   res.render("search-profiles", {
-    users: userData
+    users: getData.getUserData()
   }); // . { data: getData}after we get the getData
 });
 
