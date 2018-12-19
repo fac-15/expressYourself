@@ -1,0 +1,33 @@
+{
+  "name": "expressyourself",
+  "version": "1.0.0",
+  "description": "Express week 8 project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fac-15/expressYourself.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fac-15/expressYourself/issues"
+  },
+  "homepage": "https://github.com/fac-15/expressYourself#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie": "^0.3.1",
+    "env2": "^2.2.2",
+    "jsonwebtoken": "^8.4.0",
+    "pg": "^7.7.1"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.5",
+    "nodemon": "^1.18.8",
+    "supertest": "^3.3.0",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.9.1"
+  }
+}
