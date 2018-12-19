@@ -1,5 +1,5 @@
 :root {
-    --red: #bd3c59;
+    --red: #FF6347;
     --red-hover: #ff0039;
     --green: #1f7736;
     --green-hover: #0ed642;
@@ -166,7 +166,9 @@
     padding : 1rem;
     margin-top : 2rem;
     border-radius: 0.5rem;
-    background-color: rgba(255, 255, 255, 0.5);
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    background-color: white;
+    color:black;
     font-family: 'Josefin Sans', sans-serif;
   }
   
@@ -174,6 +176,7 @@
     font-size: 1.25rem;
     margin-bottom : 0.25rem;
   }
+  /* add colour classes for language colours */
   
   
   /* button & input type=submit */

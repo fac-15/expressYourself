@@ -3,6 +3,8 @@ const express = require("express");
 //here we'll require default infos from database
 // const getData =
 
+
+
 const router = express.Router();
 
 // home route
@@ -20,6 +22,8 @@ router.get("/search-profiles", (req, res) => {
   res.render("search-profiles"); // . { data: getData}after we get the getData
 });
 
+
+
 // individual profile route
 // - use a variable in the route name: see express-workshop with the fruit
 // router.get("/profile", (req, res) => {
@@ -27,7 +31,15 @@ router.get("/search-profiles", (req, res) => {
 // });
 
 
-// host files
+
+
+
+
+
+// module.exports = {
+//   router,
+//   app,
+// }
 
 
 module.exports = router;
