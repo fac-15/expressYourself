@@ -1,7 +1,7 @@
 const express = require("express");
 const handlebars = require("express-handlebars");
 const path = require("path");
-
+const bodyParser = require("body-parser");
 // yet to write files
 const routes = require("./routes/routes");
 const helpers = require("./views/helpers/index");
@@ -22,9 +22,16 @@ app.engine(
 );
 
 // load public folder
-app.use(
-  express.static(path.join(__dirname, '..', '/public'), {maxAge: '30d'})
-);
+app.use(express.static(path.join(__dirname, "..", "public")));
+app.use(bodyParser.json());
+// parse urlencoded bodies
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.post("/create-profile", (req, res) => {
+  console.log(req.body);
+  res.redirect("/create-profile");
+});
+
 
 app.set("port", process.env.PORT || 1989);
 app.use(routes);
