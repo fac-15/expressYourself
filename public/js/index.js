@@ -19,12 +19,31 @@ menuBtn.addEventListener('click', e => {
 
 // 
 const langButtons = Array.from(document.querySelectorAll('.language-search .button-submit'));
+const list = document.getElementById("profile")
+
+
+
 const sortLang = e => {
     e.preventDefault();
-    console.log(e.target);
+    // console.log(e.target.value);
+    const buttonName = e.target.value.toLowerCase();
+    console.log(buttonName);
+
+    const allPeeps = [];
+    fetch("/search-user")
+        .then(res => res.json())
+        .then(data => allPeeps.push(...data))
+
+        // .then(function(myJson){
+        //     console.log(JSON.stringify(myJson))
+        // })
+    console.log(allPeeps);
+    
+    
+    allPeeps.sort((a, b) => {console.log(return a.buttonName - b.buttonName});
+    console.log(allPeeps)
 }
 
 
 langButtons.forEach(btn => btn.addEventListener('click', sortLang));
-
 
