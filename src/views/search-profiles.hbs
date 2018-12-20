@@ -1,8 +1,8 @@
 <main class="page-content search-profiles">
     <section class="main-section">
         <h1>Search Profiles of your Cohort</h1>
-    </section>
-    <ul>
+    
+        <ul>
     
         {{#each users}}
         <li>
@@ -10,9 +10,15 @@
             BIO: {{bio}} <br>
             Skills: <br> 
             HTML level: {{html}} 
+            CSS level:
+            <div class={{barchart css}}>
+                
+            </div>
         </li>
         <br>
         {{/each}}
 
     </ul>
+    </section>
+
 </main>

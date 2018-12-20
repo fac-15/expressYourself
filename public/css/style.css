@@ -15,8 +15,6 @@ set border-box on everything
 }
 
 
-
-
 body {
   color: white; /* img background with overlay, most stuff needs to be white */
   font-size: 16px/1em;
@@ -220,9 +218,29 @@ a {
 
 
 
+/* - - - - - - - - - - - - - - - */
+/* bar chart */
 
-
-
+.one { 
+  height: 1rem;
+  background-color: #ff2904;
+  width: 1rem;}
+.two { 
+  height: 1rem;
+  background-color: #ff2904;
+  width: 2rem;}
+.three { 
+  height: 1rem;
+  background-color: #ff2904;
+  width: 3rem;}
+.four {
+  height: 1rem;
+  background-color: #ff2904;
+  width:4rem;}
+.five {
+  height: 1rem;
+  background-color: #ff2904;
+  width: 5rem;}
 
 
 
