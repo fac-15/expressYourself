@@ -2,19 +2,8 @@
 
     <section class="main-section">
         <h1>Search Profiles of your Cohort</h1>
-        <ul>
-            {{#each users}}
-            <li>
-                Name: {{name}} <br>
-                BIO: {{bio}} <br>
-                Skills: <br> 
-                HTML level: {{html}} 
-            </li>
-            {{/each}}
-        </ul>
-    </section>
-    
-    <section class="main-section">
+        
+        <section class="main-section">
     
     <form class="form" method="/post" action="">
     
@@ -36,7 +25,31 @@
 
 </section>
 
+    
+        <ul>
+    
+        {{#each users}}
+        <li>
+            Name: {{name}} <br>
+            BIO: {{bio}} <br>
+            Skills: <br> 
+            HTML level: {{html}} 
+            CSS level:
+            <div class={{barchart css}}>
+                
+            </div>
+        </li>
+        <br>
+        {{/each}}
+
+    </ul>
+    </section>
+
+    </section>
+    
+    
 
 
-  
+
+
 </main>

@@ -1,3 +1,3 @@
 module.exports = {
-  uppercase: require("./uppercase")
+  barchart: require("./barchart")
 };
