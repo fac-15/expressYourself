@@ -1,8 +1,8 @@
 # Meet the FACers
 Express Handlebars week 8 project. A basic CV template / skills database for FAC 15.
 
-![](https://media.giphy.com/media/bl0OeEBbELdkc/giphy.gif)
-> It's kinda got this way with gifs now...
+![](https://external-preview.redd.it/eT-5pYpej7kUXLQ22wnSKElCDoJ4FJshexNTGEcD0zk.gif?format=png8&s=6d45997c05d42ed8d98f90b3d4e41773e8576d30)
+> [It's kinda got this way with gifs now...](http://i.imgur.com/MKV12OF.gifv)
 
 ## User stories
 - As a member of FAC, I want to pair with coursemates who are of a similar level, to train on workshops
@@ -59,5 +59,3 @@ Express Handlebars week 8 project. A basic CV template / skills database for FAC
 - Check if user exists in database before adding
 - Server side validation
 - Travis
-
-![screen shot 2018-12-18 at 18 27 53](https://user-images.githubusercontent.com/25176118/50175056-c3fda800-02f3-11e9-88f8-0588c6321259.png)
