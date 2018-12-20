@@ -38,6 +38,8 @@ app.use(express.static(path.join(__dirname, "..", "public")));
 
 app.post("/create-profile", (req, res) => {
   postData.postDataLanguages(
+    req.body.name,
+    req.body.bio,
     req.body.html,
     req.body.css,
     req.body.js,

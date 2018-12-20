@@ -1,20 +1,23 @@
-
-
 <main class="page-content create-profile">
     <section class="main-section">
         <h1>Create Your User Profile</h1>
         <form class="profile-form form" method="post" action="/create-profile">
+
             <label for="signup-name">Name (3-40 characters)</label>
-            <!-- <input id="signup-name" class="text-input" type="text" name="name" value="" placeholder= "Enter your name..." autocomplete="off" pattern="[a-zA-Z'\s]{3,40}"> -->
+            <input id="signup-name" class="text-input" type="text" name="name" value="" placeholder="Enter your name..."
+                autocomplete="off" pattern="[a-zA-Z'\s]{3,40}">
 
             <label for="bio">Bio</label>
-            <textarea id="bio" class="text-input" ></textarea>
+            <input id="bio" class="text-input" type="text" name="bio" value="" placeholder="Enter your bio..."
+                autocomplete="off" pattern="[a-zA-Z'\s]{3,40}">
 
             {{!-- <label for="password">Password</label>
-            <input id="password" class="text-input" type="password" name="password" value="" placeholder= "Enter your password..." autocomplete="off" >
+            <input id="password" class="text-input" type="password" name="password" value="" placeholder="Enter your password..."
+                autocomplete="off">
 
             <label for="confirm-password">Confirm Password</label>
-            <input id="confirm-password" class="text-input" type="password" name="password" value="" placeholder= "Confirm your password..." autocomplete="off" > --}}
+            <input id="confirm-password" class="text-input" type="password" name="password" value="" placeholder="Confirm your password..."
+                autocomplete="off"> --}}
 
             <h3>Your Languages</h3>
             <p>Select your level:</p>

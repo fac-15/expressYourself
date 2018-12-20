@@ -1,14 +1,23 @@
 const dbConnection = require("../../db/db_connection");
 
 // have to post languages to languages table
-const postDataLanguages = (html, css, js, sql, node) => {
-  console.log("test inside", html, css, js, sql, node);
+const postDataLanguages = (name, bio, html, css, js, sql, node) => {
+  console.log("test inside", name, bio, html, css, js, sql, node);
   // if (err) console.log(err);
+
   dbConnection.query(
-    "INSERT INTO languages (user_id, html, css, js, sql, node) VALUES ($1, $2, $3, $4, $5, $6)",
-    [3, html, css, js, sql, node],
-    (err, peopleRes) => {
+    "INSERT INTO users (name, bio) VALUES ($1, $2) RETURNING id",
+    [name, bio],
+    (err, userRes) => {
       if (err) return err;
+
+      dbConnection.query(
+        "INSERT INTO languages (user_id, html, css, js, sql, node) VALUES ($1, $2, $3, $4, $5, $6)",
+        [userRes.rows[0].id, html, css, js, sql, node],
+        err => {
+          if (err) return err;
+        }
+      );
     }
   );
 };
