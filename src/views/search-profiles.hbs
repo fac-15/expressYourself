@@ -27,11 +27,25 @@
             Name: {{name}} <br>
             BIO: {{bio}} <br>
             Skills: <br> 
-            HTML level: {{html}} 
+            HTML level:
+            <div class={{barchart html}}>
+            </div>
             CSS level:
-            <div class={{barchart css}}>
+            <div class={{barchart css}}>   
+            </div>
+            JS level:
+            <div class={{barchart js}}>
                 
             </div>
+            SQL level 
+            <div class={{barchart sql}}>
+                
+            </div>
+            NODE level:
+               <div class={{barchart node}}>
+                
+            </div>
+
         </li>
         {{/each}}
         </ul>
