@@ -44,17 +44,18 @@ app.post("/create-profile", (req, res) => {
 // ____________
 // post routes
 
+// - this is still messing things up, and stopping them from loading:
 
-app.use(bodyParser.json);
-app.use(bodyParser.urlencoded({ extended: false}));
+// app.use(bodyParser.json);
+// app.use(bodyParser.urlencoded({ extended: false}));
 
 
-// create profile POST
-app.post("/create-profile"), (req, res) => {
-  console.log('req.body');
-  // console.log(req.body);
-  // res.redirect("/search-profiles");
-}
+// // create profile POST
+// app.post("/create-profile"), (req, res) => {
+//   console.log('req.body');
+//   // console.log(req.body);
+//   // res.redirect("/search-profiles");
+// }
 
 
 
