@@ -18,9 +18,13 @@ router.get("/create-profile", (req, res) => {
 
 // search profiles route
 router.get("/search-profiles", (req, res) => {
-  res.render("search-profiles", {
-    users: getData.getUserData()
-  }); // . { data: getData}after we get the getData
+  getData.getUserData((err, userData) => {
+    if (err) {
+      res.statusCode = 500;
+      res.send("Error");
+    }
+    res.render("search-profiles", { users: userData });
+  });
 });
 
 // individual profile route
