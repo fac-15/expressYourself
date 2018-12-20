@@ -49,50 +49,20 @@ test("Check non-existing route returns a 404", t => {
     });
 });
 
-test("Check non-existing route returns a 404", t => {
+test("Check search-profiles route returns a json object", t => {
   request(app)
-    .get("/elephant-route")
-    .expect(404)
+    .get("/search-profiles")
+    .expect(200)
     .end((err, res) => {
       if (err) {
         console.log(err);
       } else {
-        t.equal(res.status == 404, true);
+        // console.log(typeof res.body);
+        t.equal(typeof res.body === "object", true);
         t.end();
       }
     });
 });
-
-// const funcArr = ["/facsters", "/facsters/:name"];
-
-// test("Check facsters gets status of 200", t => {
-//   request(app)
-//     .get("/facsters")
-//     .expect(200)
-//     .end((err, res) => {
-//       if (err) {
-//         console.log(err);
-//       } else {
-//         t.equal(res.status == 200, true);
-//         t.end();
-//       }
-//     });
-// });
-
-// test("Check facsters returns a json object", t => {
-//   request(app)
-//     .get("/facsters")
-//     .expect(200)
-//     .end((err, res) => {
-//       if (err) {
-//         console.log(err);
-//       } else {
-//         console.log(typeof res.body);
-//         t.equal(typeof res.body === "object", true);
-//         t.end();
-//       }
-//     });
-// });
 
 // test("Check facsters returns an object", t => {
 //   request(app)
