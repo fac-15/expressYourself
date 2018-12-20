@@ -25,6 +25,7 @@ app.engine(
 // load public folder
 app.use(
   express.static(path.join(__dirname, "..", "/public"), { maxAge: "30d" })
+  // express.static(path.join(__dirname, "..", "/public"))
 );
 
 app.use(bodyParser.json());
