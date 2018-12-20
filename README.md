@@ -17,3 +17,8 @@ basic CV template for FAC
 2. `npm install` to install all dependencies
 3. `node db/db_build.js` to build the database locally
 4. `npm run dev`to run on port
+
+
+CREATE DATABASE express_yourself
+CREATE USER admin WITH SUPERUSER PASSWORD 'password'
+ALTER DATABASE express_yourself OWNER TO admin

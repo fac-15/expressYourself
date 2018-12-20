@@ -33,6 +33,9 @@ router.get("/search-profiles", (req, res) => {
 //   res.render("profile");
 // });
 
-// host files
+// module.exports = {
+//   router,
+//   app,
+// }
 
 module.exports = router;
