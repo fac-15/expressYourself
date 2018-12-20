@@ -5,7 +5,7 @@
         <h1>Create Your User Profile</h1>
         <form class="profile-form form" method="post" action="/create-profile">
             <label for="signup-name">Name (3-40 characters)</label>
-            <input id="signup-name" class="text-input" type="text" name="name" value="" placeholder= "Enter your name..." autocomplete="off" pattern="[a-zA-Z'\s]{3,40}">
+            <!-- <input id="signup-name" class="text-input" type="text" name="name" value="" placeholder= "Enter your name..." autocomplete="off" pattern="[a-zA-Z'\s]{3,40}"> -->
 
             <label for="bio">Bio</label>
             <textarea id="bio" class="text-input" ></textarea>
@@ -55,7 +55,17 @@
                 <input class="radio-input" type="radio" name="sql" value="5">5
             </div>
 
-            <input class="button-submit" type="submit" name="submit" value="Create Profile"/>
+            <label for="sql">NODE</label>
+            <div class="radio-group">
+                <input class="radio-input" type="radio" name="node" value="1">1
+                <input class="radio-input" type="radio" name="node" value="2">2
+                <input class="radio-input" type="radio" name="node" value="3">3
+                <input class="radio-input" type="radio" name="node" value="4">4
+                <input class="radio-input" type="radio" name="node" value="5">5
+            </div>
+
+            <button class="button-submit" type="submit">Create</button>
+
         </form>
     </section>
 </main>
