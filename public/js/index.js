@@ -10,40 +10,113 @@ menuBtn.addEventListener('click', e => {
     
     // play sound on menu open
     const audio = document.querySelector('.sound-menu'); // get sound
-    e.target.closest('a').classList.toggle('playing'); // add class
-    audio.currentTime = 0;
+    audio.currentTime = 0; // start at 0
     audio.play();
 })
 
 
 
-// 
-const langButtons = Array.from(document.querySelectorAll('.language-search .button-submit'));
-const list = document.getElementById("profile")
+
+// fetch data
+// - can't be inside below function
+const allPeeps = [];
+fetch("/search-user")
+    .then(res => res.json())
+    .then(data => allPeeps.push(...data));
 
 
 
-const sortLang = e => {
-    e.preventDefault();
-    // console.log(e.target.value);
-    const buttonName = e.target.value.toLowerCase();
-    console.log(buttonName);
 
-    const allPeeps = [];
-    fetch("/search-user")
-        .then(res => res.json())
-        .then(data => allPeeps.push(...data))
-
-        // .then(function(myJson){
-        //     console.log(JSON.stringify(myJson))
-        // })
-    console.log(allPeeps);
+// sort by language
+// - sort function
+const sortLang = lang => {
     
-    
-    allPeeps.sort((a, b) => {console.log(return a.buttonName - b.buttonName});
-    console.log(allPeeps)
+    // would like to be able to toggle order without a global variable:
+    // https://stackoverflow.com/questions/44661710/how-to-toggle-sort-in-javascript
+    allPeeps.sort((a, b) => {
+        const personA = a[lang];
+        const personB = b[lang];
+        // order ascending
+        if (personA < personB) {
+            return 1;
+        }
+        if (personA > personB) {
+            return -1;
+        }
+        return 0;
+    })
+    return allPeeps;
+
 }
 
 
-langButtons.forEach(btn => btn.addEventListener('click', sortLang));
+// output html
+// - mimicry of stuff in handlebars
+const sortList = e => {
+    e.preventDefault();
+    const lang = e.target.value.toLowerCase();
+    const sorted = sortLang(lang);
+    const numbers = {
+        1: "one",
+        2: "two",
+        3: "three",
+        4: "four",
+        5: "five"
+    }
 
+    const html = sorted.map(item => {
+        return `
+        <li class="cohort-member">
+            <h3 class="name">${item.name}</h3>
+            <article class="bio">${item.bio}</article>
+            <article class="skills">
+                <span>Skills:</span>
+
+                <div class="html">
+                    <span>HTML level:</span>
+                    <div class=${numbers[item.html]}></div>
+                </div>
+
+                <div class="css">
+                    <span>CSS level:</span>
+                    <div class=${numbers[item.css]}></div>
+                </div>
+
+                <div class="js">
+                    <span>JS level:</span>
+                    <div class=${numbers[item.js]}></div>
+                </div>
+
+                <div class="sql">
+                    <span>SQL level:</span>
+                    <div class=${numbers[item.sql]}></div>
+                </div>
+
+                <div class="node">
+                    <span>NODE level:</span>
+                    <div class=${numbers[item.node]}></div>
+                </div>
+            </article>
+        </li>
+        `;
+
+    }).join('');
+
+    const ul = document.querySelector('.cohort-list');
+    ul.innerHTML = html;
+}
+
+
+
+// - get buttons
+const langButtons = Array.from(document.querySelectorAll('.language-search .button-submit'));
+// - attach event listener and function
+langButtons.forEach(btn => btn.addEventListener('click', sortList));
+
+
+
+// name search
+const nameSearch = document.querySelector('.name-search .button-submit');
+nameSearch.addEventListener('click', () => {
+    document.querySelector('.name-search .text-input').value = 'We will do this another time...';
+});

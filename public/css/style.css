@@ -8,6 +8,7 @@
   --css: #563d7c;
   --sql: #ccc;
   --node: #43853d;
+  --focus: gainsboro;
 }
 html {
   scroll-behavior: smooth;
@@ -34,6 +35,7 @@ body {
   background-size: cover;
   background-position: top center; /* makes it look good on /create-profile */
   min-height: 100vh;
+  max-height:200vh;
 }
 
 h1 {
@@ -41,6 +43,7 @@ h1 {
   font-weight: 700;
   line-height: 1.6;
   margin: 0 0 1rem;
+  text-align: center;
 }
 
 h2 {
@@ -211,11 +214,9 @@ a {
 .home.page-content {
   display: flex;
     align-items: center;
-    height: 100vh;
+    height: 75vh;
     width: 100vw;
     justify-content: center;
-    position: absolute;
-    top: 0;
 }
 .home .main-section {
   margin-top: 0;
@@ -267,26 +268,17 @@ a {
 }
 .skills > div > div {
   border: 1px solid black;
+  height: 1rem;
 }
 .skills > div > span {
   font-size: 1rem;
 }
-.one { 
-  height: 1rem;
-  width: 1rem;}
-.two { 
-  height: 1rem;
-  width: 2rem;}
-.three { 
-  height: 1rem;
-  width: 3rem;}
-.four {
-  height: 1rem;
-  width:4rem;}
-.five {
-  height: 1rem;
-  width: 5rem;
-}
+.one {width: 2rem;}
+.two {width: 4rem;}
+.three {width: 6rem;}
+.four {width: 8rem;}
+.five {width: 10rem;}
+
 .html > div {
   background-color: var(--html);
 }
@@ -319,7 +311,6 @@ a {
   padding : 1rem;
   margin-top : 2rem;
   border-radius: 0.5rem;
-  /* background-color: rgba(255, 255, 255, 0.5); */
   background-color: white;
   color:black;
   font-family: 'Josefin Sans', sans-serif;
@@ -329,7 +320,8 @@ a {
   font-size: 1.25rem;
   margin-bottom : 0.25rem;
 }
-/* add colour classes for language colours */
+
+
 
 
 
@@ -349,6 +341,7 @@ a {
 .text-input:focus,
 .text-input:active {
   border: 2px solid var(--red-hover);
+  background-color: var(--focus);
 }
 
 
@@ -431,26 +424,66 @@ a {
 }
 
 
-.button-submit.html {
+
+
+
+
+/* - - - - - - - - - - - - - - - */
+/* form customisation */
+
+/* button colour */
+.button-submit.html,
+label.html {
   background-color: var(--html);
 }
-.button-submit.js {
+.button-submit.js,
+label.js {
   background-color: var(--js);
+  color: black;
 }
-.button-submit.css {
+.button-submit.css,
+label.css {
   background-color: var(--css);
+  color: white;
 }
-.button-submit.sql {
+.button-submit.sql,
+label.sql {
   background-color: var(--sql);
 }
-.button-submit.node {
+.button-submit.node,
+label.node {
   background-color: var(--node);
 }
 
 
+/* create profile-form */
+.profile-form label {
+  padding: 0.2rem 0.4rem;
+}
 
  
-  
+/* search profile form sectioning */
+.name-search {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.language-search {
+  margin-top: 1rem;
+  border-top: 2px solid black;
+  width: 100%;
+}
+.language-search label {
+  display: block;
+  margin: 1rem 0 -1rem;
+}
+.language-search .button-submit {
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+.language-search :nth-child(7){
+  margin-right: 0;
+}
   
 
 

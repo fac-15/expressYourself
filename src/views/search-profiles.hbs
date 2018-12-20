@@ -4,13 +4,13 @@
         <h1>Search Profiles of your Cohort</h1>
     
         <form class="form" method="/post" action="">
-            <label for="search">Search name</label>
-            <input type="text" name="search" value="">
-
-            <label for="submit">Submit</label>
-            <button type="button" id="submit" value""></button>
-        
+            <div class="name-search">
+                <label for="search">Search by Name</label>
+                <input class="text-input" type="text" name="search" value="" autocomplete="off" pattern="[a-zA-Z\s]{3,40}">
+                <input type="submit" class="button-submit" value="Search by Name"/>
+            </div>
             <div class="language-search">
+                <label for="sort">Sort by Skill Level</label><br>
                 <input type="submit" class="button-submit html" value="HTML"/>
                 <input type="submit" class="button-submit css" value="CSS"/>
                 <input type="submit" class="button-submit js" value="JS"/>
@@ -55,11 +55,7 @@
                     <span>NODE level:</span>
                     <div class={{barchart node}}></div>
                 </div>
-
             </article>
-
-
-            
 
         </li>
         {{/each}}
