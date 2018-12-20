@@ -27,6 +27,7 @@ router.get("/search-profiles", (req, res) => {
   });
 });
 
+
 // individual profile route
 // - use a variable in the route name: see express-workshop with the fruit
 // router.get("/profile", (req, res) => {

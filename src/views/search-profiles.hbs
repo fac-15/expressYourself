@@ -1,18 +1,32 @@
 <main class="page-content search-profiles">
-    <section class="main-section">
+    <section class="main-header">
         <h1>Search Profiles of your Cohort</h1>
-    </section>
-    <ul>
-
+    <!-- <ul>
         {{#each users}}
-
         <li>
             Name: {{name}} <br>
             BIO: {{bio}}
-
         </li>
         <br>
         {{/each}}
+    </ul> -->
+<section class="name-search">
 
-    </ul>
+<label for="search">Search name</label>
+<input type="text" name="search" value="">
+
+<label for="submit">Submit</label>
+<button type="button" id="submit" value""></button>
+</section>
+
+
+<section class="language-search">
+  <button type="button" name="button" value"html">HTML</button>
+    <button type="button" name="button" value"css">CSS</button>
+      <button type="button" name="button" value"js">JS</button>
+        <button type="button" name="button" value"sql">SQL</button>
+        <button type="button" name="button" value"node">NODE</button>
+
+</section>
+  </section>
 </main>
