@@ -36,8 +36,7 @@ router.get('/search-user', (req, res) => {
       res.statusCode = 500;
       res.send("Error");
     }
-    res.json(userData) // this will load the json object
-    // res.render("search-profiles", { users: userData } )
+    res.json(userData)
   })
 })
 

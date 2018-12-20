@@ -15,36 +15,51 @@
                 <input type="submit" class="button-submit css" value="CSS"/>
                 <input type="submit" class="button-submit js" value="JS"/>
                 <input type="submit" class="button-submit sql" value="SQL"/>
+                <input type="submit" class="button-submit node" value="NODE"/>
             </div>
         </form>
 
     </section>
 
     <section class="main-section">
-        <ul id="profile">
+
+        <ul class="cohort-list">
         {{#each users}}
-        <li>
-            Name: {{name}} <br>
-            BIO: {{bio}} <br>
-            Skills: <br> 
-            HTML level:
-            <div class={{barchart html}}>
-            </div>
-            CSS level:
-            <div class={{barchart css}}>   
-            </div>
-            JS level:
-            <div class={{barchart js}}>
-                
-            </div>
-            SQL level 
-            <div class={{barchart sql}}>
-                
-            </div>
-            NODE level:
-               <div class={{barchart node}}>
-                
-            </div>
+        <li class="cohort-member">
+            <h3 class="name">{{name}}</h3>
+            <article class="bio">{{bio}}</article>
+            <article class="skills">
+                <span>Skills:</span>
+
+                <div class="html">
+                    <span>HTML level:</span>
+                    <div class={{barchart html}}></div>
+                </div>
+
+                <div class="css">
+                    <span>CSS level:</span>
+                    <div class={{barchart css}}></div>
+                </div>
+
+                <div class="js">
+                    <span>JS level:</span>
+                    <div class={{barchart js}}></div>
+                </div>
+
+                <div class="sql">
+                    <span>SQL level:</span>
+                    <div class={{barchart sql}}></div>
+                </div>
+
+                <div class="node">
+                    <span>NODE level:</span>
+                    <div class={{barchart node}}></div>
+                </div>
+
+            </article>
+
+
+            
 
         </li>
         {{/each}}

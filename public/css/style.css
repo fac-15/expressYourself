@@ -7,6 +7,7 @@
   --js: #f1e05a;
   --css: #563d7c;
   --sql: #ccc;
+  --node: #43853d;
 }
 html {
   scroll-behavior: smooth;
@@ -224,28 +225,88 @@ a {
 
 
 /* - - - - - - - - - - - - - - - */
-/* bar chart */
+/* cohort list */
+.cohort-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+.cohort-member {
+  color: black;
+  background-color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-size: 1.25rem;
+}
 
+@media only screen and (min-width: 600px) {
+  .cohort-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .cohort-member {
+    flex-basis: 49%;
+  }
+  .cohort-member:nth-child(odd) {
+    margin-right: 1%;
+  }
+  .cohort-member:nth-child(even) {
+    margin-left: 1%;
+  }
+}
+
+
+
+
+/* bar chart */
+.skills {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid black;
+}
+.skills > div > div {
+  border: 1px solid black;
+}
+.skills > div > span {
+  font-size: 1rem;
+}
 .one { 
   height: 1rem;
-  background-color: #ff2904;
   width: 1rem;}
 .two { 
   height: 1rem;
-  background-color: #ff2904;
   width: 2rem;}
 .three { 
   height: 1rem;
-  background-color: #ff2904;
   width: 3rem;}
 .four {
   height: 1rem;
-  background-color: #ff2904;
   width:4rem;}
 .five {
   height: 1rem;
-  background-color: #ff2904;
-  width: 5rem;}
+  width: 5rem;
+}
+.html > div {
+  background-color: var(--html);
+}
+.js > div {
+  background-color: var(--js);
+}
+.css > div {
+  background-color: var(--css);
+}
+.sql > div {
+  background-color: var(--sql);
+}
+.node > div {
+  background-color: var(--node);
+}
+
+
+
+
+
 
 
 
@@ -381,6 +442,9 @@ a {
 }
 .button-submit.sql {
   background-color: var(--sql);
+}
+.button-submit.node {
+  background-color: var(--node);
 }
 
 
