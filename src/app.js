@@ -5,11 +5,9 @@ const bodyParser = require("body-parser");
 // yet to write files
 const routes = require("./routes/routes");
 const helpers = require("./views/helpers/index");
+const postData = require("./model/postData.js");
 
 const app = express();
-
-// seems to not want to work
-// const bodyParser = require("body-parser");
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
@@ -25,29 +23,33 @@ app.engine(
 );
 
 // load public folder
-app.use(express.static(path.join(__dirname, "..", "public")));
+app.use(
+  express.static(path.join(__dirname, "..", "/public"), { maxAge: "30d" })
+);
+
 app.use(bodyParser.json());
+
 // parse urlencoded bodies
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.use(express.static(path.join(__dirname, "..", "public")));
+
+// create a post '/fruit' handler and log 'name' and 'image_url'
+// redirect to '/fruit'
+
 app.post("/create-profile", (req, res) => {
-  console.log(req.body);
+  // html = req.body.html;
+  // console.log(req.body.css);
+  // // let data = JSON.stringify(req.body);
+  postData.postDataLanguages(
+    req.body.html,
+    req.body.css,
+    req.body.js,
+    req.body.sql,
+    req.body.node
+  );
   res.redirect("/create-profile");
 });
-
-// ____________
-// post routes
-
-// app.use(bodyParser.json);
-// app.use(bodyParser.urlencoded({ extended: false }));
-
-// // create profile POST
-// app.post("/create-profile"),
-//   (req, res) => {
-//     console.log("req.body");
-//     // console.log(req.body);
-//     // res.redirect("/search-profiles");
-//   };
 
 app.set("port", process.env.PORT || 1989);
 app.use(routes);

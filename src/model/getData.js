@@ -1,7 +1,10 @@
 const dbConnection = require("../../db/db_connection");
 
+// use this with GET request to output all user data
 const getUserData = cb => {
-  dbConnection.query(`SELECT * FROM users`, (err, res) => {
+  dbConnection.query(
+    `select * from languages inner join users on users.id = languages.user_id`, 
+    (err, res) => {
     if (err) {
       cb(err);
     } else {
@@ -9,6 +12,8 @@ const getUserData = cb => {
     }
   });
 };
+
+
 
 const getLanguageData = cb => {
   dbConnection.query(`SELECT * FROM languages`, (err, res) => {
@@ -34,8 +39,25 @@ const getSpecificUser = (name, cb) => {
   );
 };
 
+
+const getSpecificSkills = (id, cb) => {
+  dbConnection.query(
+    `SELECT * FROM languages WHERE user_id = '${id}'`,
+    (err, res) => {
+      if (err) {
+        cb(err);
+      } else {
+        console.log(res.rows);
+        cb(null, res.rows);
+      }
+    }
+  );
+};
+
+
 module.exports = {
   getUserData,
   getLanguageData,
-  getSpecificUser
+  getSpecificUser,
+  getSpecificSkills
 };

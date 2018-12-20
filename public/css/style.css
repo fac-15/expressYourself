@@ -1,319 +1,374 @@
 :root {
-    --red: #FF6347;
-    --red-hover: #ff0039;
-    --green: #1f7736;
-    --green-hover: #0ed642;
-  }
-  html {
-    scroll-behavior: smooth;
-  }
-  /*
-  set border-box on everything
-  */
-  * {
-    box-sizing: border-box;
-  }
-  
+  --red: #ff6347;
+  --red-hover: #ff2904;
+  --green: #1f7736;
+  --green-hover: #0ed642;
+}
+html {
+  scroll-behavior: smooth;
+}
+/*
+set border-box on everything
+*/
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  color: white; /* img background with overlay, most stuff needs to be white */
+  font-size: 16px/1em;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.4;
+  background:
+    radial-gradient(transparent, rgba(0, 0, 0, 0.75)),
+    url('../img/fac15-bg.jpg'),
+    black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center; /* makes it look good on /create-profile */
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.25rem;
+  font-weight: 700;
+  line-height: 1.6;
+  margin: 0 0 1rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0 0 1rem;
+}
+
+h3 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0 0 1rem;
+}
+
+p {
+  font-size : 1.5rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.hidden {
+  visibility: hidden;
+  height: 0;
+  display: none;
+}
 
 
 
-  body {
-    color: black;
-    font-size: 16px/1em;
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 400;
-    line-height: 1.4;
-    background:
-      radial-gradient(transparent, rgba(0, 0, 0, 0.75)),
-      url('../img/fac15-bg.jpg'),
-      black;
-    background-repeat: no-repeat;
-    background-size: cover;
-    /* height: 100vh; */
-  }
 
-  @media only screen and (min-width: 600px) {
-    body {
-      height: 100vh;
-      /* background-size: 100%; */
-    }
-  }
-  
-  
-  h1 {
-    font-size: 3.25rem;
-    font-weight: 700;
-    line-height: 1.6;
-    margin: 0 0 1rem;
-    font-family: 'Dancing Script', cursive;
-  }
-  
-  h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    line-height: 1.5;
-    margin: 0 0 1rem;
-  }
-  
-  h3 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    line-height: 1.4;
-    margin: 0 0 1rem;
-  }
-  
-  p {
-    font-size : 1.5rem;
-  }
-  
-  a {
-    text-decoration: none;
-  }
-  
-  .hidden {
-    visibility: hidden;
-    height: 0;
-    display: none;
-  }
-  
-  
-  
-  /* general spacing */
-  .page-header,
-  .main-section {
-    max-width: 1000px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-  
-  
+/* - - - - - - - - - - - - - - - */
+/* general spacing */
+.main-section {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
 
 
 
 
 
 
-  /* nav bar */
-  .nav-bar {
-    background-color: black;
-    color: white;
-    color: white;
-    padding: 1rem 0;
-  }
-  
 
-  .nav-bar .main-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-  }
-  @media only screen and (min-width: 600px) {
-    .nav-bar .main-section {
-      flex-direction: row;
-    }
-  }
-  .logo img {
-    width: 100%;
-    max-width: 4rem;
-  }
-  .title {
-    font-family: 'Dancing Script', cursive;
-    font-size: 2.25rem;
-    color: white;
-  }
 
-  /* menu */
-  .nav-menu ul {
-    list-style: none;
-    font-size: 2rem;
-  }
-  .nav-menu a {
-    color: white;
-  }
-  .nav-menu a:hover {
-    border-bottom: 2px solid;
-  }
 
-  
-
-  
-  
-  
-  
-  /* main, and page specific styles */
-  .page-content .main-section {
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .home,
-  .create-profile,
-  .search-profiles {
-    color: white;
-  }
-  
-  
-  
-  
-  /* forms */
-  .form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding : 1rem;
-    margin-top : 2rem;
-    border-radius: 0.5rem;
-    /* background-color: rgba(255, 255, 255, 0.5); */
-    background-color: white;
-    color:black;
-    font-family: 'Josefin Sans', sans-serif;
-  }
-  
-  .form label {
-    font-size: 1.25rem;
-    margin-bottom : 0.25rem;
-  }
-  /* add colour classes for language colours */
-  
-  
-  /* button & input type=submit */
-  /* - reset */
-  .button-input {
-    padding: 0;
-    border: 0;
-    background: transparent;
-  }
-  .button-submit,
-  .button-input a {
-    align-self: flex-end;
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 1.5rem;
-    letter-spacing: 0.05rem;
-    padding: 1rem;
-    border: 0;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: background-color ease-in-out 0.3s;
-    color: white;
-    background-color: var(--red);
-  }
-  .button-submit:hover,
-  .button-submit:focus,
-  .button-input a:hover,
-  .button-input a:focus {
-    background-color: var(--red-hover);
-  }
-  
-  
-  /* login (green button) */
-  .button-input.login a {
-    background-color: var(--green);;
-  }
-  .button-input.login a:hover,
-  .button-input.login a:focus {
-    background-color: var(--green-hover);;
-  }
-  .button-input a,
-  .button-input a:hover,
-  .button-input a:focus {
-    color: white;
-  }
-  
-  
-  
-  
-  
-  
-  /* text input */
-  .text-input {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 1.5rem;
-    width: 100%;
-    display: block;
-    margin-bottom: 0.75rem;
-    padding: 0.75rem 0.5rem;
-    border-radius: 0.5rem;
-    border: 2px solid var(--red);
-  }
-  .text-input:focus,
-  .text-input:active {
-    border: 2px solid var(--red-hover);
-  }
-  
-  
-  /* radio input */
-  .radio-group {
-    display: flex;
+/* - - - - - - - - - - - - - - - */
+/* login/logout area */
+.auth-section .main-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.auth-section .button-input.login {
+  margin-left: 1rem;
+}
+@media only screen and (min-width: 600px) {
+  .banner .main-section {
     flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 2rem;
   }
-  .radio-input {
-    margin-left: 2rem;
-  }
-  .radio-input:first-child {
-    margin-left: 0;
-  }
-  
+}
 
 
 
 
 
-  /* form error classes */
+
+/* - - - - - - - - - - - - - - - */
+/* nav-menu (app-drawer) */
+
+/* nav menu container */
+.nav-menu {
+  position: absolute;
+  top: 0; /* height of banner / top bar */
+  left: 0;
+  bottom: 0;
+  max-width: 20rem;/* stretch to fit text */
+  width: 100%;
+  z-index: 1;
+}
+
+
+
+
+/* app drawer ul */
+.app-drawer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding : 6.5rem 2rem 2rem;
+  list-style: none;
+  font-size: 2rem;
+  line-height: 4rem;
+  background-color: var(--red);
+  transform: translateX(-100%);
+  transition: transform ease-in-out 0.5s;
+}
+.app-drawer.open {
+  transform: translateX(0);
+}
+.app-drawer a {
+  color: white;
+}
+.app-drawer a:hover {
+  border-bottom: 2px solid;
+}
+
+/* transform: translateX(-100%); */
+
+
+
+
+
+
+/* burger button */
+.burger-menu {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  display: block;
+  width: 3rem;
+  height: 2.5rem;
+  cursor: pointer;
+  z-index: 2;
+}
+.burger-menu > div {
+  width: 100%;
+  height: 0.5rem;
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 0.5rem;
+  transform-origin: 0 0;
+  transition: transform ease-in-out 0.5s;
+}
+/* open */
+.open.burger-menu > div:nth-child(1) {
+  transform: skew(0deg, 34deg);
+}
+.open.burger-menu > div:nth-child(2) {
+  visibility: hidden;
+}
+.open.burger-menu > div:nth-child(3) {
+  transform: skew(0deg, -34deg);
+}
+
+
+
+
+
+
+
+
+
+
+/* - - - - - - - - - - - - - - - */
+/* main, and page specific styles */
+.page-content .main-section {
+  margin-top: 2rem;
+}
+
+/* home page */
+.home.page-content {
+  display: flex;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+}
+.home .main-section {
+  margin-top: 0;
+  text-align: center;
+}
+
+
+
+/* - - - - - - - - - - - - - - - */
+/* bar chart */
+
+.one { 
+  height: 1rem;
+  background-color: #ff2904;
+  width: 1rem;}
+.two { 
+  height: 1rem;
+  background-color: #ff2904;
+  width: 2rem;}
+.three { 
+  height: 1rem;
+  background-color: #ff2904;
+  width: 3rem;}
+.four {
+  height: 1rem;
+  background-color: #ff2904;
+  width:4rem;}
+.five {
+  height: 1rem;
+  background-color: #ff2904;
+  width: 5rem;}
+
+
+
+/* - - - - - - - - - - - - - - - */
+/* forms */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding : 1rem;
+  margin-top : 2rem;
+  border-radius: 0.5rem;
+  /* background-color: rgba(255, 255, 255, 0.5); */
+  background-color: white;
+  color:black;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.form label {
+  font-size: 1.25rem;
+  margin-bottom : 0.25rem;
+}
+/* add colour classes for language colours */
+
+
+
+
+
+/* text input */
+.text-input {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.5rem;
+  width: 100%;
+  display: block;
+  margin-bottom: 0.75rem;
+  padding: 0.75rem 0.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--red);
+}
+.text-input:focus,
+.text-input:active {
+  border: 2px solid var(--red-hover);
+}
+
+
+/* radio input */
+.radio-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.radio-input {
+  margin-left: 2rem;
+}
+.radio-input:first-child {
+  margin-left: 0;
+}
+
+/* form error classes */
+
+/* - input field style */
+.error-red {
+  background-color : var(--red);
+  border: 2px solid var(--red-hover);
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* - - - - - - - - - - - - - - - */
+/* button & input type=submit */
+/* - reset */
+.button-input {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  margin-top: 3rem;
+}
+.button-submit,
+.button-input a {
+  align-self: flex-end;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.05rem;
+  padding: 1rem;
+  border: 0;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color ease-in-out 0.3s;
+  color: white;
+  background-color: var(--red);
+}
+.button-submit:hover,
+.button-submit:focus,
+.button-input a:hover,
+.button-input a:focus {
+  background-color: var(--red-hover);
+}
+
+
+/* login (green button) */
+.button-input.login a {
+  background-color: var(--green);;
+}
+.button-input.login a:hover,
+.button-input.login a:focus {
+  background-color: var(--green-hover);;
+}
+.button-input a,
+.button-input a:hover,
+.button-input a:focus {
+  color: white;
+}
+
+
+
+ 
   
-  /* - input field style */
-  .error-red {
-    background-color : var(--red);
-    border: 2px solid var(--red-hover);
-    color: white;
-  }
   
-  
-  
-  
-  
-  
-  
-  
-  /* talks list */
-  /* .talks {
-    font-family: font-family: 'Josefin Sans', sans-serif;
-    font-size: 1.5rem;
-    width: 100%;
-    max-height: 16rem;
-    margin-bottom: 1.5rem;
-    overflow-y: scroll;
-    list-style: none;
-  }
-  .talk-item {
-    display: block;
-    margin-bottom: 0.25rem;
-    padding: 0.75rem 0.5rem;
-    border-radius: 0.5rem;
-    border: 2px solid var(--red);
-    background-color: rgba(255, 255, 255, 0.5);
-    text-shadow: none;
-  }
-  .talk-name,
-  .no-talks {
-    font-size: 2rem;
-    font-weight: bold;
-  }
-  .talk-name {
-    margin-right: 1rem;
-    padding-right: 1rem;
-    border-right: 2px solid black;
-  }
-  .person,
-  .date,
-  .time {
-    padding-right: 1rem;
-  }
-  
-   */
-  
-  
+
+
+
