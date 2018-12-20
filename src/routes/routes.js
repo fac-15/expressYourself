@@ -23,9 +23,20 @@ router.get("/search-profiles", (req, res) => {
       res.statusCode = 500;
       res.send("Error");
     }
-    res.render("search-profiles", { users: userData });
-  });
-});
+
+  // getData.getLanguageData((error, skillData) => {
+  //   if (error) {
+  //     res.statusCode = 500;
+  //     res.send("Error");
+  //   }
+    res.render("search-profiles", 
+    { 
+      // skills: skillData,
+      users: userData });
+      })
+    })
+  // });
+
 
 // individual profile route
 // - use a variable in the route name: see express-workshop with the fruit
