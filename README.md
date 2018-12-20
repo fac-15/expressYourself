@@ -33,3 +33,5 @@ basic CV template for FAC
 
 ### SQL bits
 - SELECT LUNCH - Posting info to one table, returning the id to enter into another table [Select Lunch](https://github.com/fac-15/SELECTlunch/blob/staging/src/handler/postData.js)
+- [can't send headers after they were sent to the client error](https://stackoverflow.com/questions/7042340/error-cant-set-headers-after-they-are-sent-to-the-client)
+- problem with database connection, psql new version?

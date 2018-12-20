@@ -3,6 +3,10 @@
   --red-hover: #ff2904;
   --green: #1f7736;
   --green-hover: #0ed642;
+  --html: #e34c26;
+  --js: #f1e05a;
+  --css: #563d7c;
+  --sql: #ccc;
 }
 html {
   scroll-behavior: smooth;
@@ -113,7 +117,6 @@ a {
 
 /* nav menu container */
 .nav-menu {
-  position: absolute;
   top: 0; /* height of banner / top bar */
   left: 0;
   bottom: 0;
@@ -130,6 +133,7 @@ a {
   position: absolute;
   top: 0;
   bottom: 0;
+
   padding : 6.5rem 2rem 2rem;
   list-style: none;
   font-size: 2rem;
@@ -140,6 +144,7 @@ a {
 }
 .app-drawer.open {
   transform: translateX(0);
+  z-index: 1;
 }
 .app-drawer a {
   color: white;
@@ -362,6 +367,20 @@ a {
 .button-input a:hover,
 .button-input a:focus {
   color: white;
+}
+
+
+.button-submit.html {
+  background-color: var(--html);
+}
+.button-submit.js {
+  background-color: var(--js);
+}
+.button-submit.css {
+  background-color: var(--css);
+}
+.button-submit.sql {
+  background-color: var(--sql);
 }
 
 

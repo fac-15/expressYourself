@@ -23,19 +23,24 @@ router.get("/search-profiles", (req, res) => {
       res.statusCode = 500;
       res.send("Error");
     }
+    res.render("search-profiles", { users: userData } )
+  })
+})
 
-  // getData.getLanguageData((error, skillData) => {
-  //   if (error) {
-  //     res.statusCode = 500;
-  //     res.send("Error");
-  //   }
-    res.render("search-profiles", 
-    { 
-      // skills: skillData,
-      users: userData });
-      })
-    })
-  // });
+
+// search tool
+router.get('/search-user', (req, res) => {
+
+  getData.getUserData((err, userData) => {
+    if (err) {
+      res.statusCode = 500;
+      res.send("Error");
+    }
+    res.json(userData) // this will load the json object
+    // res.render("search-profiles", { users: userData } )
+  })
+})
+
 
 
 

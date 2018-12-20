@@ -14,3 +14,17 @@ menuBtn.addEventListener('click', e => {
     audio.currentTime = 0;
     audio.play();
 })
+
+
+
+// 
+const langButtons = Array.from(document.querySelectorAll('.language-search .button-submit'));
+const sortLang = e => {
+    e.preventDefault();
+    console.log(e.target);
+}
+
+
+langButtons.forEach(btn => btn.addEventListener('click', sortLang));
+
+
