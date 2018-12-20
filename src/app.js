@@ -34,16 +34,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(path.join(__dirname, "..", "public")));
 
-// create a post '/fruit' handler and log 'name' and 'image_url'
-// redirect to '/fruit'
+
 
 app.post("/create-profile", (req, res) => {
-  // html = req.body.html;
-  // console.log(req.body);
-  // console.log(req.body.name[0]);
-  // console.log(req.body.name[1]);
-
-  // // let data = JSON.stringify(req.body);
   postData.postDataLanguages(
     req.body.name,
     req.body.bio,
