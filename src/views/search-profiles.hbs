@@ -2,20 +2,21 @@
 
     <section class="main-section">
         <h1>Search Profiles of your Cohort</h1>
-    
+
         <form class="form" method="/post" action="">
             <div class="name-search">
                 <label for="search">Search by Name</label>
-                <input class="text-input" type="text" name="search" value="" autocomplete="off" pattern="[a-zA-Z\s]{3,40}">
-                <input type="submit" class="button-submit" value="Search by Name"/>
+                <input class="text-input" id="text-input" type="text" name="search" value="">
+                {{!-- autocomplete="off" pattern="[a-zA-Z\s]{3,40}" --}}
+                <input type="submit" id='search_btn' class="button-submit" value="Search by Name" />
             </div>
             <div class="language-search">
                 <label for="sort">Sort by Skill Level</label><br>
-                <input type="submit" class="button-submit html" value="HTML"/>
-                <input type="submit" class="button-submit css" value="CSS"/>
-                <input type="submit" class="button-submit js" value="JS"/>
-                <input type="submit" class="button-submit sql" value="SQL"/>
-                <input type="submit" class="button-submit node" value="NODE"/>
+                <input type="submit" class="button-submit html" value="HTML" />
+                <input type="submit" class="button-submit css" value="CSS" />
+                <input type="submit" class="button-submit js" value="JS" />
+                <input type="submit" class="button-submit sql" value="SQL" />
+                <input type="submit" class="button-submit node" value="NODE" />
             </div>
         </form>
 
@@ -24,47 +25,47 @@
     <section class="main-section">
 
         <ul class="cohort-list">
-        {{#each users}}
-        <li class="cohort-member">
-            <h3 class="name">{{name}}</h3>
-            <article class="bio">{{bio}}</article>
-            <article class="skills">
-                <span>Skills:</span>
+            {{#each users}}
+            <li class="cohort-member">
+                <h3 class="name">{{name}}</h3>
+                <article class="bio">{{bio}}</article>
+                <article class="skills">
+                    <span>Skills:</span>
 
-                <div class="html">
-                    <span>HTML level:</span>
-                    <div class={{barchart html}}></div>
-                </div>
+                    <div class="html">
+                        <span>HTML level:</span>
+                        <div class={{barchart html}}></div>
+                    </div>
 
-                <div class="css">
-                    <span>CSS level:</span>
-                    <div class={{barchart css}}></div>
-                </div>
+                    <div class="css">
+                        <span>CSS level:</span>
+                        <div class={{barchart css}}></div>
+                    </div>
 
-                <div class="js">
-                    <span>JS level:</span>
-                    <div class={{barchart js}}></div>
-                </div>
+                    <div class="js">
+                        <span>JS level:</span>
+                        <div class={{barchart js}}></div>
+                    </div>
 
-                <div class="sql">
-                    <span>SQL level:</span>
-                    <div class={{barchart sql}}></div>
-                </div>
+                    <div class="sql">
+                        <span>SQL level:</span>
+                        <div class={{barchart sql}}></div>
+                    </div>
 
-                <div class="node">
-                    <span>NODE level:</span>
-                    <div class={{barchart node}}></div>
-                </div>
-            </article>
+                    <div class="node">
+                        <span>NODE level:</span>
+                        <div class={{barchart node}}></div>
+                    </div>
+                </article>
 
-        </li>
-        {{/each}}
+            </li>
+            {{/each}}
         </ul>
 
     </section>
 
-    
-        
+
+
 
 
 
