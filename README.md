@@ -29,10 +29,11 @@ DATABASE_URL = postgres://admin:password@localhost:5432/express_yourself
 7. Runs on **staging** branch
 
 ### Creating a local database
-1. run `psql` or `pgcli`
-2. **CREATE DATABASE** express_yourself
-3. **CREATE USER** admin **WITH SUPERUSER PASSWORD** 'password'
-4. **ALTER DATABASE** express_yourself **OWNER TO** admin
+Connect to postgres, by typing psql or pgcli in the terminal.
+Create the database by typing CREATE DATABASE express_yourself;.
+Create a superuser with a password by typing CREATE USER admin WITH SUPERUSER PASSWORD 'password'; (the password needs to be in quotes, otherwise you get an error).
+Change ownership of the database to the new user by typing ALTER DATABASE express_yourself OWNER TO admin;
+Add a config.env file and add the database's url in this format: DB_URL = postgres://admin:password@localhost:5432/express_yourself. The database name needs to be in lower case.
 
 ---
 
