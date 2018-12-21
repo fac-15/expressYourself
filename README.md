@@ -26,6 +26,7 @@ Gives Json a good headstart on his [student project!](https://github.com/fac-15/
 DATABASE_URL = postgres://admin:password@localhost:5432/express_yourself
 ```
 6. `npm run dev` to run on port 1989. The year that [Express Yourself](https://www.youtube.com/watch?v=u31FO_4d9TY) came out. Our original project name.
+7. Runs on **staging** branch
 
 ### Creating a local database
 1. run `psql` or `pgcli`
