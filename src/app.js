@@ -35,17 +35,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(path.join(__dirname, "..", "public")));
 
-
-
 app.post("/create-profile", (req, res) => {
   postData.postDataLanguages(
-    req.body.name,
-    req.body.bio,
-    req.body.html,
-    req.body.css,
-    req.body.js,
-    req.body.sql,
-    req.body.node
+    req.body
+    // req.body.name,
+    // req.body.bio,
+    // req.body.html,
+    // req.body.css,
+    // req.body.js,
+    // req.body.sql,
+    // req.body.node
   );
   res.redirect("/create-profile");
 });
