@@ -5,10 +5,9 @@
 
         <form class="form" method="/post" action="">
             <div class="name-search">
-                <label for="search">Search by Name</label>
-                <input class="text-input" id="text-input" type="text" name="search" value="">
-                {{!-- autocomplete="off" pattern="[a-zA-Z\s]{3,40}" --}}
-                <input type="submit" id='search_btn' class="button-submit" value="Search by Name" />
+                <label for="search" id="name-label">Search by Name</label>
+                <input class="text-input" id="name-search" type="text" name="search" value="" autocomplete="off" pattern="[a-zA-Z'\s]{2,40}"/>
+                <input type="submit" id='name-search-button' class="button-submit" value="Search by Name" />
             </div>
             <div class="language-search">
                 <label for="sort">Sort by Skill Level</label><br>
@@ -69,5 +68,5 @@
 
 
 
-
+<script src="js/search.js"></script>
 </main>
