@@ -64,7 +64,7 @@ h3 {
 }
 
 p {
-  font-size : 1.5rem;
+  font-size : 2rem;
 }
 
 a {
@@ -351,15 +351,17 @@ a {
 /* radio input */
 .radio-group {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 2rem;
+  margin: 0.6em;
 }
 .radio-input {
   margin-left: 2rem;
+  height: 2em;
+  width: 2em;
+  margin: 0.8em;
 }
+
 .radio-input:first-child {
-  margin-left: 0;
+  margin-left: 1em;
 }
 
 /* form error classes */
@@ -438,24 +440,29 @@ a {
 .button-submit.html,
 label.html {
   background-color: var(--html);
+  font-size: 2.2em;
 }
 .button-submit.js,
 label.js {
   background-color: var(--js);
   color: black;
+  font-size: 2.2em;
 }
 .button-submit.css,
 label.css {
   background-color: var(--css);
   color: white;
+  font-size: 2.2em;
 }
 .button-submit.sql,
 label.sql {
   background-color: var(--sql);
+  font-size: 2.2em;
 }
 .button-submit.node,
 label.node {
   background-color: var(--node);
+  font-size: 2.2em;
 }
 
 
