@@ -16,6 +16,7 @@ router.get("/create-profile", (req, res) => {
   res.render("create-profile"); // . { data: getData}after we get the getData
 });
 
+
 // search profiles route
 router.get("/search-profiles", (req, res) => {
   getData.getUserData((err, userData) => {
@@ -39,6 +40,26 @@ router.get('/search-user', (req, res) => {
     res.json(userData)
   })
 })
+
+
+
+
+// error pages
+router.use(function(req, res, next){
+  res.status(404);
+
+  if (req.accepts('html')) {
+    res.render("404");
+    return;
+  }
+
+  if (req.accepts('json')) {
+    res.render("500");
+    return;
+  }
+
+  res.type('txt').send('Not found');
+});
 
 
 
