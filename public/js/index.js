@@ -47,6 +47,10 @@ const sortList = e => {
   e.preventDefault();
   const lang = e.target.value.toLowerCase();
   const sorted = sortLang(lang);
+  html(sorted);
+};
+
+const html = arr => {
   const numbers = {
     1: "one",
     2: "two",
@@ -55,7 +59,7 @@ const sortList = e => {
     5: "five"
   };
 
-  const html = sorted
+  const outputHtml = arr
     .map(item => {
       return `
         <li class="cohort-member">
@@ -95,7 +99,7 @@ const sortList = e => {
     .join("");
 
   const ul = document.querySelector(".cohort-list");
-  ul.innerHTML = html;
+  ul.innerHTML = outputHtml;
 };
 
 // - get buttons
@@ -111,11 +115,36 @@ const nameSearch = document.getElementById("search_btn");
 
 nameSearch.addEventListener("click", e => {
   e.preventDefault();
+
   const textInput = document.getElementById("text-input").value;
+  const firstLetter = textInput
+    .toLowerCase()
+    .charAt(0)
+    .toUpperCase();
 
-  //   alert("allpeeps", allPeeps);
+  const formatted = firstLetter + textInput.substr(1);
 
+  console.log(formatted.length);
+  if (formatted.length === 0) {
+    console.log("must be more than 0");
+  } else {
+    // console.log(allPeeps[0].name);
+    const nameFind = facers => {
+      return facers.name === formatted;
+    };
+
+    const person = allPeeps.find(nameFind);
+
+    if (person === undefined) {
+      console.log("no person found");
+    } else {
+      console.log(person);
+      const arr = [];
+      arr.push(person);
+      console.log(arr);
+      html(arr);
+    }
+  }
   //   console.log("you clicked the search button");
-  console.log(textInput);
   //   ("We will do this another time...");
 });
