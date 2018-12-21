@@ -57,19 +57,19 @@ INSERT INTO languages (user_id, html, css, js, sql, node) VALUES
 ),
 (
   (SELECT id FROM users WHERE name = 'Martin'),
+  '4',
   '5',
-  '5',
-  '5',
-  '5',
-  '5'
+  '4',
+  '1',
+  '2'
 ),
 (
   (SELECT id FROM users WHERE name = 'Mike'),
   '5',
-  '5',
-  '5',
-  '5',
-  '5'
+  '4',
+  '3',
+  '2',
+  '4'
 );
 
 COMMIT;

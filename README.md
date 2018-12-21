@@ -1,5 +1,6 @@
 # Meet the FACers
 Express Handlebars week 8 project. A basic CV template / skills database for FAC 15.
+Gives Json a good headstart on his [student project!](https://github.com/fac-15/project-ideas/issues/8)
 
 ![](https://external-preview.redd.it/eT-5pYpej7kUXLQ22wnSKElCDoJ4FJshexNTGEcD0zk.gif?format=png8&s=6d45997c05d42ed8d98f90b3d4e41773e8576d30)
 > [It's kinda got this way with gifs now...](http://i.imgur.com/MKV12OF.gifv)
@@ -18,15 +19,19 @@ Express Handlebars week 8 project. A basic CV template / skills database for FAC
 ### setup instructions
 1. clone repo
 2. `npm install` to install all dependencies
-3. Create a local database with pgcli (see below)
-4. `node db/db_build.js` to build the database locally, if you are into that kinda thing
-5. `npm run dev` to run on port 1989. Year of birth of the "DOM God"...
+3. Create a local database with `pgcli` or `psql` (see below)
+4. `node db/db_build.js` to build the database locally, as we haven't made on on Heroku yet. **NOTE:** Uncomment the line: ```// dbBuilder();``` in ```db/db_build.js``` first.
+5. `config.env`should look something like this:
+```javascript
+DATABASE_URL = postgres://admin:password@localhost:5432/express_yourself
+```
+6. `npm run dev` to run on port 1989. The year that [Express Yourself](https://www.youtube.com/watch?v=u31FO_4d9TY) came out. Our original project name.
 
 ### Creating a local database
 1. run `psql` or `pgcli`
-2. CREATE DATABASE express_yourself
-3. CREATE USER admin WITH SUPERUSER PASSWORD 'password'
-4. ALTER DATABASE express_yourself OWNER TO admin
+2. **CREATE DATABASE** express_yourself
+3. **CREATE USER** admin **WITH SUPERUSER PASSWORD** 'password'
+4. **ALTER DATABASE** express_yourself **OWNER TO** admin
 
 ---
 
@@ -43,19 +48,24 @@ Express Handlebars week 8 project. A basic CV template / skills database for FAC
 - problem with database connection (on Martin's laptop), had to install pgcli new version. Much frustration.
 - did an INNER JOIN to get all user data from two tables in the database. Joined user_ids to retrieve names.
 
-### Other stuff
-- Self indulgent CSS
-- [HackMD with some bits and bobs in](https://hackmd.io/JkdM0tkhTRe9WfpVGBR3zQ)
-- ```Array.sort()``` method
+### Other stuff of note
+- Lots of self indulgent CSS
+- Posting data to server through the form
+- Using a handlebars helper function
+- ```Array.sort()``` method to sort by skill ascending
 - replicating backend rendering in the frontend (see `public/index.js`)
+- [HackMD with some bits and bobs in](https://hackmd.io/JkdM0tkhTRe9WfpVGBR3zQ)
 
 
 ### Things we didn't do:
+
+![](https://media.giphy.com/media/wuw1DKSj9eq9G/giphy.gif)
+
 - Extensive Testing
-- Login, Signup, protected routes
+- Login, Signup, protected routes (authentication)
 - Database Testing
-- Pick an uncontroversial name
+- [Pick an original name](https://www.imdb.com/title/tt0290002/)
 - Host on Heroku
 - Check if user exists in database before adding
 - Server side validation
-- Travis
+- Travis CI and the fancy badges
