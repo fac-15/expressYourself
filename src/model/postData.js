@@ -1,10 +1,10 @@
 const dbConnection = require("../../db/db_connection");
 
 // have to post languages to languages table
-const postDataLanguages = (name, bio, html, css, js, sql, node) => {
-  console.log("test inside", name, bio, html, css, js, sql, node);
+const postDataLanguages = obj => {
+  console.log("test inside", obj);
   // if (err) console.log(err);
-
+  var { name, bio, html, css, js, sql, node } = obj;
   dbConnection.query(
     "INSERT INTO users (name, bio) VALUES ($1, $2) RETURNING id",
     [name, bio],

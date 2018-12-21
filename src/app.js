@@ -25,7 +25,6 @@ app.engine(
 // load public folder
 app.use(
   express.static(path.join(__dirname, "..", "/public"), { maxAge: "30d" })
-  // express.static(path.join(__dirname, "..", "/public"))
 );
 
 app.use(bodyParser.json());
@@ -35,17 +34,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(path.join(__dirname, "..", "public")));
 
-
-
 app.post("/create-profile", (req, res) => {
   postData.postDataLanguages(
-    req.body.name,
-    req.body.bio,
-    req.body.html,
-    req.body.css,
-    req.body.js,
-    req.body.sql,
-    req.body.node
+    req.body
+    // req.body.name,
+    // req.body.bio,
+    // req.body.html,
+    // req.body.css,
+    // req.body.js,
+    // req.body.sql,
+    // req.body.node
   );
   res.redirect("/create-profile");
 });

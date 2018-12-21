@@ -107,11 +107,6 @@ langButtons.forEach(btn => btn.addEventListener("click", sortList));
 
 // name search
 
-// const allPeeps = [];
-// fetch("/search-user")
-//   .then(res => res.json())
-//   .then(data => allPeeps.push(...data));
-
 const nameSearch = document.getElementById("search_btn");
 
 nameSearch.addEventListener("click", e => {
