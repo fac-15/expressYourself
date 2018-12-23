@@ -31,8 +31,8 @@ const sortLang = lang => {
 
 
 
-// output html
-// - mimicry of stuff in handlebars
+
+// sort the list ascending
 const sortList = e => {
   e.preventDefault();
   const lang = e.target.value.toLowerCase();
@@ -40,6 +40,7 @@ const sortList = e => {
   html(sorted);
 };
 
+// output html
 const html = arr => {
   const numbers = {
     1: "one",

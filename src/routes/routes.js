@@ -1,19 +1,21 @@
 const express = require("express");
 const getData = require("../model/getData");
 
-//here we'll require default infos from database
-// const getData =
+// setup language options
+// - needs destructuring
+const {langData} = require("../model/langData");
 
+// create a new router
 const router = express.Router();
 
 // home route
 router.get("/", (req, res) => {
-  res.render("home"); // . { data: getData}after we get the getData
+  res.render("home");
 });
 
 // create profile route
 router.get("/create-profile", (req, res) => {
-  res.render("create-profile"); // . { data: getData}after we get the getData
+  res.render("create-profile", { languages: langData } );
 });
 
 
@@ -24,7 +26,7 @@ router.get("/search-profiles", (req, res) => {
       res.statusCode = 500;
       res.send("Error");
     }
-    res.render("search-profiles", { users: userData } )
+    res.render("search-profiles", { users: userData, languages: langData } )
   })
 })
 
@@ -60,19 +62,5 @@ router.use(function(req, res, next){
 
   res.type('txt').send('Not found');
 });
-
-
-
-
-// individual profile route
-// - use a variable in the route name: see express-workshop with the fruit
-// router.get("/profile", (req, res) => {
-//   res.render("profile");
-// });
-
-// module.exports = {
-//   router,
-//   app,
-// }
 
 module.exports = router;

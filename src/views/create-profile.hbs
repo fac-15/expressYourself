@@ -3,76 +3,46 @@
         <h1>Create Your User Profile</h1>
         <form class="profile-form form" method="post" action="/create-profile">
 
-            <label for="signup-name">Name (3-40 characters)</label>
-            <input id="signup-name" class="text-input" type="text" name="name" value="" placeholder="Enter your name..."
-                autocomplete="off" pattern="[a-zA-Z'\s]{3,40}">
+            <div class="name-input">
+                <label for="signup-name">Name (3-40 characters)</label>
+                <input id="signup-name" class="text-input" type="text" name="name" value="" placeholder="Enter your name..."
+                    autocomplete="off" pattern="[a-zA-Z'\s]{3,40}">
 
-            <label for="bio">Bio</label>
-            <input id="bio" class="text-input" type="text" name="bio" value="" placeholder="Enter your bio..."
-                autocomplete="off" pattern="[a-zA-Z',\s]{3,40}">
+                <label for="bio">Bio</label>
+                <input id="bio" class="text-input" type="text" name="bio" value="" placeholder="Enter your bio..."
+                    autocomplete="off" pattern="[a-zA-Z',\s]{3,40}">
 
-            {{!-- <label for="password">Password</label>
-            <input id="password" class="text-input" type="password" name="password" value="" placeholder="Enter your password..."
-                autocomplete="off">
+                <label for="password">Password (must contain 8 or more characters)</label>
+                <input id="password" class="text-input" type="password" name="password" value="" 
+                placeholder="Enter your password..." pattern="[!(<>)]{8,40}" autocomplete="off" disabled > 
 
-            <label for="confirm-password">Confirm Password</label>
-            <input id="confirm-password" class="text-input" type="password" name="password" value="" placeholder="Confirm your password..."
-                autocomplete="off"> --}}
+                <label for="confirm-password">Confirm Password</label>
+                <input id="confirm-password" class="text-input" type="password" name="confirm-password" value="" 
+                placeholder="Confirm your password..." autocomplete="off" disabled >
+            </div>
 
-            <h3>Your Languages</h3>
-            <p>Select your level:</p>
+            <div class="language-input">
+                <h3>Your Languages</h3>
+                <p>Select your level:</p>
 
-            
-            <div class="radio-group">
-                <label for="html" class="html">HTML
-                <input class="radio-input" type="radio" name="html" value="1">1
-                <input class="radio-input" type="radio" name="html" value="2">2
-                <input class="radio-input" type="radio" name="html" value="3">3
-                <input class="radio-input" type="radio" name="html" value="4">4
-                <input class="radio-input" type="radio" name="html" value="5">5
-            </label></div>
+                {{#each languages}}
+                <div class="form-rows">
+                    <label for="{{lang}}" class="label-bg {{lang}}">{{uppercase lang}}</label>
+                    <div class="radio-group">
+                        {{#levels}}
+                        <label class="radio-label">{{addone @key}}
+                            <input class="radio-input" type="radio" name="{{../lang}}" value="{{addone @key}}">
+                            <span class="checkmark"></span>
+                        </label>
+                        {{/levels}}
+                    </div>
+                </div>
+                {{/each}}
+                <!-- use ../ to access properties of the parent loop -->
+                <!-- levels is a property of languages, with a value of an array. Therefore, it can be iterated over with #levels -->
 
-            
-            <div class="radio-group">
-                <label for="css" class="css">CSS
-                <input class="radio-input" type="radio" name="css" value="1">1
-                <input class="radio-input" type="radio" name="css" value="2">2
-                <input class="radio-input" type="radio" name="css" value="3">3
-                <input class="radio-input" type="radio" name="css" value="4">4
-                <input class="radio-input" type="radio" name="css" value="5">5
-            </label></div>
-
-            
-            <div class="radio-group">
-                <label for="js" class="js">JavaScript
-                <input class="radio-input" type="radio" name="js" value="1">1
-                <input class="radio-input" type="radio" name="js" value="2">2
-                <input class="radio-input" type="radio" name="js" value="3">3
-                <input class="radio-input" type="radio" name="js" value="4">4
-                <input class="radio-input" type="radio" name="js" value="5">5
-            </label></div>
-
-            <div class="radio-group">
-
-            <label for="sql" class="sql">SQL
-                <input class="radio-input" type="radio" name="sql" value="1">1
-                <input class="radio-input" type="radio" name="sql" value="2">2
-                <input class="radio-input" type="radio" name="sql" value="3">3
-                <input class="radio-input" type="radio" name="sql" value="4">4
-                <input class="radio-input" type="radio" name="sql" value="5">5
-            </label></div>
-
-            <div class="radio-group">
-
-            <label for="node" class="node">NODE
-                <input class="radio-input" type="radio" name="node" value="1">1
-                <input class="radio-input" type="radio" name="node" value="2">2
-                <input class="radio-input" type="radio" name="node" value="3">3
-                <input class="radio-input" type="radio" name="node" value="4">4
-                <input class="radio-input" type="radio" name="node" value="5">5
-            </label></div>
-
-            <input type="submit" class="button-submit"/>
+                <input type="submit" class="button-submit"/>
+            </div>
 
         </form>
     </section>

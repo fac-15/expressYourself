@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-
-
 :root {
   --red: #ff6347;
   --red-hover: #ff2904;
@@ -37,8 +34,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center; /* makes it look good on /create-profile */
-  min-height: 100vh;
-  max-height:200vh;
+  background-attachment: fixed;
 }
 
 h1 {
@@ -80,39 +76,20 @@ a {
 
 
 
-/* - - - - - - - - - - - - - - - */
-/* general spacing */
-.main-section {
-  max-width: 1000px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-
-
-
-
-
-
 
 
 /* - - - - - - - - - - - - - - - */
 /* login/logout area */
-.auth-section .main-section {
+.auth-section {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
 }
 .auth-section .button-input.login {
-  margin-left: 1rem;
+  margin-left: 1.25rem;
 }
-@media only screen and (min-width: 600px) {
-  .banner .main-section {
-    flex-direction: row;
-  }
-}
+
 
 
 
@@ -120,8 +97,6 @@ a {
 
 
 /* - - - - - - - - - - - - - - - */
-/* nav-menu (app-drawer) */
-
 /* nav menu container */
 .nav-menu {
   top: 0; /* height of banner / top bar */
@@ -139,6 +114,7 @@ a {
   position: fixed;
   top: 0;
   bottom: 0;
+  z-index: 1;
   padding : 6.5rem 2rem 2rem;
   list-style: none;
   font-size: 2rem;
@@ -149,7 +125,6 @@ a {
 }
 .app-drawer.open {
   transform: translateX(0);
-  z-index: 1;
   height: 100%;
 }
 .app-drawer a {
@@ -159,7 +134,6 @@ a {
   border-bottom: 2px solid;
 }
 
-/* transform: translateX(-100%); */
 
 
 
@@ -168,12 +142,15 @@ a {
 
 /* burger button */
 .burger-menu {
-  position: absolute;
+  position: fixed;
   top: 2rem;
   left: 2rem;
   display: block;
-  width: 3rem;
-  height: 2.5rem;
+  width: 3.5rem;
+  height: 3.2rem;
+  padding: 0.3rem 0.2rem 0.2rem;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 0.6rem;
   cursor: pointer;
   z-index: 2;
 }
@@ -181,10 +158,13 @@ a {
   width: 100%;
   height: 0.5rem;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 0.6rem;
   margin-top: 0.5rem;
   transform-origin: 0 0;
   transition: transform ease-in-out 0.5s;
+}
+.burger-menu > div:nth-child(1) {
+  margin-top: 0;
 }
 /* open */
 .open.burger-menu > div:nth-child(1) {
@@ -208,21 +188,30 @@ a {
 
 /* - - - - - - - - - - - - - - - */
 /* main, and page specific styles */
-.page-content .main-section {
-  margin-top: 2rem;
+/* general spacing */
+.main-section {
+  max-width: 1000px;
+  width: 100%;
+  margin: 2rem auto 0;
+  padding: 0 1rem;
+}
+
+.page-content .main-section:first-child {
+  margin-top: 8rem;
 }
 
 /* home page */
-.home.page-content {
-  display: flex;
-    align-items: center;
-    height: 75vh;
-    width: 100vw;
-    justify-content: center;
-}
-.home .main-section {
+.page-content.home .main-section:first-child {
   margin-top: 0;
+  height: 100vh;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.page-content.home .main-section .button-input {
+  margin-top: 3rem;
 }
 
 
@@ -275,11 +264,11 @@ a {
 .skills > div > span {
   font-size: 1rem;
 }
-.one {width: 2rem;}
-.two {width: 4rem;}
-.three {width: 6rem;}
-.four {width: 8rem;}
-.five {width: 10rem;}
+.one {width: 20%;}
+.two {width: 40%;}
+.three {width: 60%;}
+.four {width: 80%;}
+.five {width: 100%;}
 
 .html > div {
   background-color: var(--html);
@@ -311,15 +300,15 @@ a {
   flex-direction: column;
   align-items: flex-start;
   padding : 1rem;
-  margin-top : 2rem;
-  margin-bottom: 4em;
+  margin: 2rem 0;
   border-radius: 0.5rem;
   background-color: white;
   color:black;
   font-family: 'Josefin Sans', sans-serif;
 }
 
-.form label {
+.form label,
+.form p {
   font-size: 1.25rem;
   margin-bottom : 0.25rem;
 }
@@ -342,36 +331,104 @@ a {
   border: 2px solid var(--red);
 }
 .text-input:focus,
-.text-input:active {
+.text-input:active,
+.text-input:disabled {
   border: 2px solid var(--red-hover);
   background-color: var(--focus);
 }
-
-
-/* radio input */
-.radio-group {
-  display: flex;
-  margin: 0.6em;
-}
-.radio-input {
-  margin-left: 2rem;
-  height: 2em;
-  width: 2em;
-  margin: 0.8em;
-}
-
-.radio-input:first-child {
-  margin-left: 1em;
-}
-
-/* form error classes */
-
-/* - input field style */
-.error-red {
+/* - form error - input field style */
+.error-red,
+.error-red:focus {
   background-color : var(--red);
   border: 2px solid var(--red-hover);
   color: white;
 }
+
+
+
+/* - - - - - - - - - - - - - - - */
+/* radio inputs */
+/* --- container */
+.radio-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 2rem;
+}
+/* --- individual container */
+.form .radio-label {
+  display: block;
+  position: relative;
+  padding-left: 2.5rem;
+  margin: 0 1rem 0 0;
+  cursor: pointer;
+  font-size: 1.5rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* --- radio input */
+.radio-input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+/* --- custom button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  width: 2rem;
+  background-color: #eee;
+  border-radius: 50%;
+}
+/* --- hover */
+.radio-label:hover .radio-input ~ .checkmark {
+  background-color: var(--focus);
+}
+/* --- checked */
+.html + .radio-group .radio-label .radio-input:checked ~ .checkmark {
+  background-color: var(--html);
+}
+.css + .radio-group .radio-label .radio-input:checked ~ .checkmark {
+  background-color: var(--css);
+}
+.js + .radio-group .radio-label .radio-input:checked ~ .checkmark {
+  background-color: var(--js);
+}
+.sql + .radio-group .radio-label .radio-input:checked ~ .checkmark {
+  background-color: var(--sql);
+}
+.node + .radio-group .radio-label .radio-input:checked ~ .checkmark {
+  background-color: var(--node);
+}
+/* --- dot indicator */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  top: 0.75rem;
+  left: 0.75rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: white;
+}
+/* --- dot:checked */
+.radio-label .radio-input:checked ~ .checkmark:after {
+  display: block;
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -390,7 +447,7 @@ a {
   padding: 0;
   border: 0;
   background: transparent;
-  margin-top: 3rem;
+  display: flex;
 }
 .button-submit,
 .button-input a {
@@ -433,64 +490,87 @@ a {
 
 
 
+
+
+
+
+
+
+
+
 /* - - - - - - - - - - - - - - - */
 /* form customisation */
 
-/* button colour */
-.button-submit.html,
-label.html {
-  background-color: var(--html);
-  font-size: 2.2em;
-}
-.button-submit.js,
-label.js {
-  background-color: var(--js);
-  color: black;
-  font-size: 2.2em;
-}
-.button-submit.css,
-label.css {
-  background-color: var(--css);
-  color: white;
-  font-size: 2.2em;
-}
-.button-submit.sql,
-label.sql {
-  background-color: var(--sql);
-  font-size: 2.2em;
-}
-.button-submit.node,
-label.node {
-  background-color: var(--node);
-  font-size: 2.2em;
-}
-
-
-/* create profile-form */
-.profile-form label {
-  padding: 0.2rem 0.4rem;
-}
-
-
-/* search profile form sectioning */
-.name-search {
+/* --- sectioning */
+.name-search,
+.name-input {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
-.language-search {
+.language-search,
+.language-input {
   margin-top: 1rem;
   border-top: 2px solid black;
   width: 100%;
 }
+.language-input {
+  display: flex;
+  flex-direction: column;
+}
+.form-rows {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+.language-input .form-rows {
+  margin-bottom: 1rem;
+}
+
+
+/* --- button colour */
+.button-submit.html,
+.label-bg.html {background-color: var(--html);}
+.button-submit.js,
+.label-bg.js { background-color: var(--js); color: black; }
+.button-submit.css,
+.label-bg.css { background-color: var(--css); color: white; }
+.button-submit.sql,
+.label-bg.sql  { background-color: var(--sql); }
+.button-submit.node,
+.label-bg.node { background-color: var(--node); }
+/* darken on focus */
+.language-search .button-submit:focus {
+  filter: saturate(125%) hue-rotate(-10deg) brightness(0.9);
+}
+
+
+
+/* --- element customisation */
+
+/* --- create profile */
+.language-input h3 {
+  margin-top: 1rem;
+}
+
+.form .label-bg {
+  padding: 0.4rem 0.4rem 0.2rem;
+  margin: 0;
+}
+
+/* --- search profiles */
 .language-search label {
   display: block;
   margin: 1rem 0 -1rem;
 }
+
 .language-search .button-submit {
   margin-right: 1rem;
   margin-top: 1rem;
 }
-.language-search :nth-child(7){
+.language-search :nth-child(5){
   margin-right: 0;
 }
+

@@ -23,17 +23,16 @@ Gives Json a good headstart on his [student project!](https://github.com/fac-15/
 4. `node db/db_build.js` to build the database locally, as we haven't made on on Heroku yet. **NOTE:** Uncomment the line: ```// dbBuilder();``` in ```db/db_build.js``` first.
 5. `config.env`should look something like this:
 ```javascript
-DATABASE_URL = postgres://admin:password@localhost:5432/express_yourself
+DATABASE_URL = postgres://<user_name>:<password>@localhost:5432/<database_name>
 ```
 6. `npm run dev` to run on port 1989. The year that [Express Yourself](https://www.youtube.com/watch?v=u31FO_4d9TY) came out. Our original project name.
 7. Runs on **staging** branch
 
 ### Creating a local database
-Connect to postgres, by typing psql or pgcli in the terminal.
-Create the database by typing CREATE DATABASE express_yourself;.
-Create a superuser with a password by typing CREATE USER admin WITH SUPERUSER PASSWORD 'password'; (the password needs to be in quotes, otherwise you get an error).
-Change ownership of the database to the new user by typing ALTER DATABASE express_yourself OWNER TO admin;
-Add a config.env file and add the database's url in this format: DB_URL = postgres://admin:password@localhost:5432/express_yourself. The database name needs to be in lower case.
+- Connect to postgres, by typing `psql` or `pgcli` in the terminal.
+- Create the database by typing **CREATE DATABASE** `<database_name>`;.
+- Create a superuser with a password by typing **CREATE USER** `<user_name>` **WITH SUPERUSER PASSWORD** '`<password>`'; (the password needs to be in quotes, otherwise you get an error).
+- Change ownership of the database to the new user by typing **ALTER DATABASE** `<database_name>` **OWNER TO** `<user_name>`;
 
 ---
 
