@@ -10,12 +10,12 @@
                 <input type="submit" id='name-search-button' class="button-submit" value="Search by Name" />
             </div>
             <div class="language-search">
-                <label for="sort">Sort by Skill Level</label><br>
-                <input type="submit" class="button-submit html" value="HTML" />
-                <input type="submit" class="button-submit css" value="CSS" />
-                <input type="submit" class="button-submit js" value="JS" />
-                <input type="submit" class="button-submit sql" value="SQL" />
-                <input type="submit" class="button-submit node" value="NODE" />
+                <label for="sort">Sort by Skill Level</label>
+                <div class="form-rows">
+                    {{#each languages}}
+                    <input type="submit" class="button-submit {{lang}}" value="{{uppercase lang}}" />
+                    {{/each}}
+                </div>
             </div>
         </form>
 
@@ -30,42 +30,24 @@
                 <article class="bio">{{bio}}</article>
                 <article class="skills">
                     <span>Skills:</span>
-
-                    <div class="html">
-                        <span>HTML level:</span>
-                        <div class={{barchart html}}></div>
+                    {{#each ../languages}}
+                    <div class="{{lang}}">
+                        <span>{{uppercase lang}} level:</span>
+                        <div class="{{barchart ../this lang}}"></div>
                     </div>
-
-                    <div class="css">
-                        <span>CSS level:</span>
-                        <div class={{barchart css}}></div>
-                    </div>
-
-                    <div class="js">
-                        <span>JS level:</span>
-                        <div class={{barchart js}}></div>
-                    </div>
-
-                    <div class="sql">
-                        <span>SQL level:</span>
-                        <div class={{barchart sql}}></div>
-                    </div>
-
-                    <div class="node">
-                        <span>NODE level:</span>
-                        <div class={{barchart node}}></div>
-                    </div>
+                    {{/each}}
                 </article>
 
             </li>
             {{/each}}
+            <!-- 
+            - use the lookup helper to search one object while using a value from another, e.g. users[lang]
+            https://stackoverflow.com/questions/29829723/example-of-using-handlebars-lookup-helper
+            - combined the lookup helper into the barchart function
+            -->
         </ul>
 
     </section>
-
-
-
-
 
 
 <script src="js/search.js"></script>

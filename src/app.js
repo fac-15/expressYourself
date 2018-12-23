@@ -37,15 +37,8 @@ app.use(express.static(path.join(__dirname, "..", "public")));
 app.post("/create-profile", (req, res) => {
   postData.postDataLanguages(
     req.body
-    // req.body.name,
-    // req.body.bio,
-    // req.body.html,
-    // req.body.css,
-    // req.body.js,
-    // req.body.sql,
-    // req.body.node
   );
-  res.redirect("/create-profile");
+  res.redirect("/search-profiles");
 });
 
 app.set("port", process.env.PORT || 1989);
